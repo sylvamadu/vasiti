@@ -1,0 +1,66 @@
+@mixin mobile-sm {
+    @media screen and (min-width:150px) and (max-width:425px){
+        @content;
+    }
+}
+
+
+
+.Top_page_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 8em;
+    position: relative;
+
+    @include mobile-sm(){
+        padding-left: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    
+    .circlebg{
+        position: absolute;
+        height: 600px;
+        width: 700px;
+        top: 10%;
+        right: 2em;
+    }
+
+    article{
+        width: 100%;
+        
+       
+        h2{
+            font-size: 2.5em;
+            line-height: 1.5;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        p{
+            color: #494949;
+            line-height: 1.5;
+            margin: .5em 0;
+            width: 70%;
+            @include mobile-sm(){
+                width: 100%;
+            }
+        }
+
+    }
+    figure{
+        width: 70%;
+
+        @include mobile-sm(){
+            width: 100%;
+        }
+
+        img{
+            @include mobile-sm(){
+                width: 100%;
+            }
+        }
+    }
+}

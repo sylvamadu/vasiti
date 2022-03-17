@@ -1,0 +1,70 @@
+@mixin mobile-sm {
+    @media screen and (min-width:150px) and (max-width:425px){
+        @content;
+    }
+}
+
+.experience{
+    padding: 2em 8em;
+    @include mobile-sm{
+        padding: 2em 0;
+        padding-left: 1em;
+    }
+    .second-part{
+        padding: 4em 0;
+    }
+    .topexp{
+       
+        display: flex;
+        flex-direction: row-reverse;
+        @include mobile-sm{
+            display: flex;
+            flex-direction: column;
+            margin: 1em 0;
+        }
+       
+
+        figure{
+            align-items: center;
+
+            @include mobile-sm{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 1em 0;
+            }
+            img{
+                @include mobile-sm{
+                    width: 250px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        article{
+            width: 100%;
+           
+
+            h3{
+               font-weight: bold;
+               margin: 1em 0; 
+            }
+            h5{
+                color: orangered;
+                border: 1px solid orangered;
+                text-align: center;
+                width: 19%;
+                padding: .5em 0;
+                margin: 1em 0;
+                text-transform: uppercase;
+            }
+            p{
+                line-height: 1.5;
+                margin: 1em 0;
+                @include mobile-sm{
+                    padding-right: .8em;
+                }
+            }
+        }
+    }
+}

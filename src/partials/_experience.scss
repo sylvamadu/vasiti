@@ -1,0 +1,74 @@
+@mixin mobile-sm {
+    @media screen and (min-width:150px) and (max-width:425px){
+        @content;
+    }
+}
+
+
+.experience{
+    padding: 2em 8em;
+    @include mobile-sm{
+        padding: 2em 0;
+        padding-left: 1em;
+    }
+    .first_experience{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 2em;
+        @include mobile-sm{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-gap: 1em;
+        }
+
+        .card{
+            grid-column: auto;
+            display: flex;
+            flex-direction: column;
+
+            figure{
+               margin: 1em 0;
+                img{
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    @include mobile-sm(){
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+
+            .content{
+                h3{
+                    text-transform: capitalize;
+                }
+                .top{
+                    margin: 1em 0;
+                    h4{
+                        text-transform: capitalize;
+                    }
+                    p{
+                        text-transform: uppercase;
+                        color: green;
+                        background: rgba(0, 128, 0, 0.301);
+                        padding: .5em 0;
+                        font-size: .8em;
+                        width: 24%;
+                        text-align: center;
+
+                        
+                    }
+                    .customer{
+                        color: blue;
+                        background: rgba(0, 0, 255, 0.288);
+                    }
+                    
+                }
+                p{
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}

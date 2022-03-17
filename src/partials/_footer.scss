@@ -1,0 +1,128 @@
+@mixin mobile-sm {
+    @media screen and (min-width:150px) and (max-width:425px){
+        @content;
+    }
+}
+
+    
+
+.footer{
+    padding: 2em 8em;
+    background: #25201D;
+    color: white;
+    @include mobile-sm{
+        padding: 2em 1.5em;
+    }
+    
+
+    .top_section{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 1em;
+        @include mobile-sm{
+            grid-template-columns: repeat(1,1fr);
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        img{
+            @include mobile-sm{
+                width: 100%;
+                margin: 1em 0;
+            }
+        }  
+            
+        .subscribe{
+            margin-top: 4em;
+
+            img{
+                @include mobile-sm{
+                   width: 90%;
+                }
+            }
+
+            p{
+                line-height: 1.5;
+                width: 80%;
+                margin: 1em 0;
+            }
+            form{
+                width: 80%;
+                border-radius: 1em;
+                background: #514d4a;
+                color: white;
+                padding: 2px;
+                @include mobile-sm{
+                    width: 100%;
+                    padding: 5px;
+                }
+
+                input[type='text']{
+                    padding: 1em 0;
+                    padding-left: 1em;
+                    border-radius: 4em;
+                    width:80%;
+                    border: none;
+                    background: transparent;
+                    color: white;
+
+                    @include mobile-sm{
+                        width: 70%;
+                    }
+                }
+                input[type='button']{
+                    padding: 1em 0;
+                    text-align: center;
+                    border-radius: 1em;
+                    width:20%;
+                    border: none;
+                    @include mobile-sm{
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+    .bottom_section{
+        padding: 3em 0;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-gap: 1.5em;
+        @include mobile-sm{
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        section{
+            grid-column: auto;
+            h3{
+                margin: .6em 0;
+                font-weight: bold;
+            }
+            ul{
+                margin-top: .7em;
+                li{
+                    list-style: none;
+                    padding: .4em 0;
+                }
+            }
+
+            .icons{
+                margin: 2em 0;
+
+                span{
+                    background-color: white;
+                    padding:.5em;
+                    border-radius: 50%;
+                    margin: 0 .3em;
+                    @include mobile-sm{
+                        margin: 0 .1em;
+                    }
+                    .icon{
+                        color: black;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
